@@ -5,7 +5,7 @@ kubectl run --rm -ti \
 --restart=Never \
 --pod-running-timeout=1m \
 --image="docker.io/busybox:1.36" \
---overrides='{"spec":{"containers":[{"name":"debug","tty":true,"stdin":true,"securityContext":{"runAsUser":666, "runAsGroup":666},"resources":{"limits":{"cpu":"1","memory":"500Mi","ephemeral-storage":"10Mi"},"requests":{"cpu":"1","memory":"500Mi","ephemeral-storage":"10Mi"}}}]}}' \
+--overrides='{"spec":{"containers":[{"name":"debug","image":"docker.io/busybox:1.36","tty":true,"stdin":true,"securityContext":{"runAsUser":666, "runAsGroup":666},"resources":{"limits":{"cpu":"1","memory":"500Mi","ephemeral-storage":"10Mi"},"requests":{"cpu":"1","memory":"500Mi","ephemeral-storage":"10Mi"}}}]}}' \
 debug
 ```
 
